@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
@@ -11,22 +10,26 @@ import android.widget.TextView;
 //TODO clean up this class now that it is working
 public class Baluster extends AppCompatActivity {
 
-    static int runFraction = 0;
-    static int balusterFraction = 0;
+    private static int runFraction = 1;
+    private static int balusterFraction = 1;
+
+    private static int runLength = 1;
+    private static int balusterWidth = 1;
+
+    private static int balusterCount = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baluster);
-        setRunSeekbar();
-        setFractionSeekbar();
-        setBalusterFractionSeekbar();
-        setBalusterWidthSeekbar();
-
-
+        createRunSeekbar();
+        createFractionSeekbar();
+        createBalusterFractionSeekbar();
+        createBalusterWidthSeekbar();
+        
     }
 
-    private void setRunSeekbar() {
+    private void createRunSeekbar() {
         int step = 1;
         int max = 108;
         int min = 1;
@@ -55,7 +58,7 @@ public class Baluster extends AppCompatActivity {
         );
     }
 
-    private void setBalusterWidthSeekbar() {
+    private void createBalusterWidthSeekbar() {
         int step = 1;
         int max = 6;
         int min = 1;
@@ -85,7 +88,7 @@ public class Baluster extends AppCompatActivity {
     }
 
 
-    private void setFractionSeekbar() {
+    private void createFractionSeekbar() {
         int step = 1;
         int max = 16;
         int min = 1;
@@ -114,7 +117,7 @@ public class Baluster extends AppCompatActivity {
         );
     }
 
-    private void setBalusterFractionSeekbar() {
+    private void createBalusterFractionSeekbar() {
         int step = 1;
         int max = 16;
         int min = 1;
@@ -146,6 +149,7 @@ public class Baluster extends AppCompatActivity {
 
     public void setRunLength(int length) {
         TextView runLength = (TextView) findViewById(R.id.RunLength);
+        Baluster.runLength = length;
         runLength.setText("" + length);
         updateResults();
     }
@@ -153,127 +157,23 @@ public class Baluster extends AppCompatActivity {
 
     public void setRunLengthFraction(int length) {
         TextView runLength = (TextView) findViewById(R.id.runLengthFraction);
-        String fractionValue = "";
-
+        String fractionValue = getFractionString(length);
         Baluster.runFraction = length;
-
-        switch (length) {
-            case 0:
-                fractionValue = fractionValue;
-                break;
-            case 1:
-                fractionValue = " \u00B9" + "/" + "\u2081" + "\u2086";
-                break;
-            case 2:
-                fractionValue = " " + (char) 8539;
-                break;
-            case 3:
-                fractionValue = " \u00B3" + "/" + "\u2081" + "\u2086";
-                break;
-            case 4:
-                fractionValue = " \u00BC";
-                break;
-            case 5:
-                fractionValue = " \u2075" + "/" + "\u2081" + "\u2086";
-                break;
-            case 6:
-                fractionValue = " " + (char) 8540;
-                break;
-            case 7:
-                fractionValue = " \u2077" + "/" + "\u2081" + "\u2086";
-                break;
-            case 8:
-                fractionValue = " " + (char) 189;
-                break;
-            case 9:
-                fractionValue = " \u2079" + "/" + "\u2081" + "\u2086";
-                break;
-            case 10:
-                fractionValue = " \u215D";
-                break;
-            case 11:
-                fractionValue = " \u00B9" + "\u00B9" + "/" + "\u2081" + "\u2086";
-                break;
-            case 12:
-                fractionValue = " \u00BE";
-                break;
-            case 13:
-                fractionValue = " \u00B9" + "\u00B3" + "/" + "\u2081" + "\u2086";
-                break;
-            case 14:
-                fractionValue = " \u215E";
-                break;
-            case 15:
-                fractionValue = " \u00B9" + "\u2075" + "/" + "\u2081" + "\u2086";
-                break;
-
-        }
         runLength.setText(fractionValue + "\" ");
         updateResults();
     }
 
-    public void setBalusterWidth(int length) {
+    public void setBalusterWidth(int width) {
         TextView runLength = (TextView) findViewById(R.id.BalusterWidth);
-        runLength.setText("" + length);
+        Baluster.balusterWidth = width;
+        runLength.setText("" + width);
         updateResults();
     }
 
-    public void setBalusterWidthFraction(int length) {
+    public void setBalusterWidthFraction(int width) {
         TextView runLength = (TextView) findViewById(R.id.BalusterWidthFraction);
-        String fractionValue = "";
-        Baluster.balusterFraction = length;
-
-        switch (length) {
-            case 0:
-                fractionValue = fractionValue;
-                break;
-            case 1:
-                fractionValue = " \u00B9" + "/" + "\u2081" + "\u2086";
-                break;
-            case 2:
-                fractionValue = " " + (char) 8539;
-                break;
-            case 3:
-                fractionValue = " \u00B3" + "/" + "\u2081" + "\u2086";
-                break;
-            case 4:
-                fractionValue = " \u00BC";
-                break;
-            case 5:
-                fractionValue = " \u2075" + "/" + "\u2081" + "\u2086";
-                break;
-            case 6:
-                fractionValue = " " + (char) 8540;
-                break;
-            case 7:
-                fractionValue = " \u2077" + "/" + "\u2081" + "\u2086";
-                break;
-            case 8:
-                fractionValue = " " + (char) 189;
-                break;
-            case 9:
-                fractionValue = " \u2079" + "/" + "\u2081" + "\u2086";
-                break;
-            case 10:
-                fractionValue = " \u215D";
-                break;
-            case 11:
-                fractionValue = " \u00B9" + "\u00B9" + "/" + "\u2081" + "\u2086";
-                break;
-            case 12:
-                fractionValue = " \u00BE";
-                break;
-            case 13:
-                fractionValue = " \u00B9" + "\u00B3" + "/" + "\u2081" + "\u2086";
-                break;
-            case 14:
-                fractionValue = " \u215E";
-                break;
-            case 15:
-                fractionValue = " \u00B9" + "\u2075" + "/" + "\u2081" + "\u2086";
-                break;
-
-        }
+        Baluster.balusterFraction = width;
+        String fractionValue = getFractionString(width);
         runLength.setText(fractionValue + "\" ");
         updateResults();
     }
@@ -305,28 +205,20 @@ public class Baluster extends AppCompatActivity {
         TextView runLengthInteger = (TextView) findViewById(R.id.RunLength);
         double runLength = Integer.parseInt(runLengthInteger.getText().toString());
         TextView balusterWidthInteger = (TextView) findViewById(R.id.BalusterWidth);
-        double BalusterWidth = Integer.parseInt(balusterWidthInteger.getText().toString());
+        double balusterWidth = Integer.parseInt(balusterWidthInteger.getText().toString());
 
         TextView betweenSpacing = (TextView) findViewById(R.id.SpaceBetween);
-        double balusterSpace = totalBalusters * 5.5;
 
+        double balusterSpace = totalBalusters * ((balusterWidth*1.0) + (1.0 * Baluster.balusterFraction/16));
         double integerResult = (runLength + (((double) Baluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
         String fraction = getFractionResult(integerResult - Math.floor(integerResult));
         betweenSpacing.setText((int) Math.floor(integerResult) + " " + fraction + "\"");
     }
 
-    public String getFractionResult(double fraction) {
-        System.out.println("fractioin: " + fraction);
-        double measured = fraction;
-        double oneSixteenth = 1.0 / 16.0;
-        int counter = 0;
-        while (measured >= oneSixteenth) {
-            counter++;
-            measured = measured - oneSixteenth;
-        }
+    private String getFractionString(int numerator){
 
         String fractionValue = "";
-        switch (counter) {
+        switch (numerator) {
             case 0:
                 fractionValue = fractionValue;
                 break;
@@ -376,6 +268,20 @@ public class Baluster extends AppCompatActivity {
                 fractionValue = " \u00B9" + "\u2075" + "/" + "\u2081" + "\u2086";
                 break;
         }
+        return fractionValue;
+    }
+
+    public String getFractionResult(double fraction) {
+        double measured = fraction;
+        double oneSixteenth = 1.0 / 16.0;
+        int counter = 0;
+        //round down
+        while (measured >= oneSixteenth) {
+            counter++;
+            measured = measured - oneSixteenth;
+        }
+
+        String fractionValue = getFractionString(counter);
         return fractionValue;
     }
 
