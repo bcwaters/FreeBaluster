@@ -13,7 +13,7 @@ public class Baluster extends AppCompatActivity {
     private static int runFraction = 1;
     private static int balusterFraction = 1;
 
-    private static int runLength = 1;
+    private static int runLength = 5;
     private static int balusterWidth = 1;
 
     private static int balusterCount = 1;
@@ -26,13 +26,13 @@ public class Baluster extends AppCompatActivity {
         createFractionSeekbar();
         createBalusterFractionSeekbar();
         createBalusterWidthSeekbar();
-        
+
     }
 
     private void createRunSeekbar() {
         int step = 1;
         int max = 108;
-        int min = 1;
+        int min = 5;
 
         SeekBar seekbar = findViewById(R.id.RunLengthInteger);
         seekbar.setMax((max - min) / step);
@@ -182,8 +182,11 @@ public class Baluster extends AppCompatActivity {
     public void increaseBaluster(View view) {
         TextView currentBalusters = (TextView) findViewById(R.id.TotalBalusters);
         int total = 1 + Integer.parseInt(currentBalusters.getText().toString());
-        currentBalusters.setText("" + total);
-        updateResults();
+
+        if (total * (Baluster.balusterWidth + (Baluster.balusterFraction/16.0 )) < Baluster.runLength) {
+            currentBalusters.setText("" + total);
+            updateResults();
+        }
     }
 
     public void decreaseBaluster(View view) {
@@ -209,13 +212,13 @@ public class Baluster extends AppCompatActivity {
 
         TextView betweenSpacing = (TextView) findViewById(R.id.SpaceBetween);
 
-        double balusterSpace = totalBalusters * ((balusterWidth*1.0) + (1.0 * Baluster.balusterFraction/16));
+        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * Baluster.balusterFraction / 16));
         double integerResult = (runLength + (((double) Baluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
         String fraction = getFractionResult(integerResult - Math.floor(integerResult));
         betweenSpacing.setText((int) Math.floor(integerResult) + " " + fraction + "\"");
     }
 
-    private String getFractionString(int numerator){
+    private String getFractionString(int numerator) {
 
         String fractionValue = "";
         switch (numerator) {
@@ -293,9 +296,9 @@ public class Baluster extends AppCompatActivity {
         TextView balusterWidthInteger = (TextView) findViewById(R.id.BalusterWidth);
         int balusterWidth = Integer.parseInt(balusterWidthInteger.getText().toString());
 
-        double balusterSpace = totalBalusters * ((balusterWidth*1.0) + (1.0 * Baluster.balusterFraction/16));
+        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * Baluster.balusterFraction / 16));
         double integerResult = (runLength + (((double) Baluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
-        integerResult += ((balusterWidth*1.0) + (1.0 * Baluster.balusterFraction/16));
+        integerResult += ((balusterWidth * 1.0) + (1.0 * Baluster.balusterFraction / 16));
         String fraction = getFractionResult(integerResult - Math.floor(integerResult));
 
         TextView onCenter = (TextView) findViewById(R.id.SpaceOnCenter);

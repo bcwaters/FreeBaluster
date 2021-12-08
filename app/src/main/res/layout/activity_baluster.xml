@@ -129,7 +129,7 @@
         android:layout_marginStart="176dp"
         android:layout_marginTop="48dp"
         android:fontFamily="monospace"
-        android:text="1"
+        android:text="5"
         android:textAlignment="textEnd"
         android:textSize="20sp"
         android:textStyle="bold"
