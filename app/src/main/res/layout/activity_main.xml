@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/landscaping2"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="120dp"
+        android:onClick="enterLandscaping"
+        android:text="Landscaping"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/landscaping4"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="360dp"
+        android:onClick="enterPlumbing"
+        android:text="Plumbing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/landscaping3"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="280dp"
+        android:onClick="enterCarpentry"
+        android:text="Carpentry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/landscaping6"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="444dp"
+        android:onClick="enterPainting"
+        android:text="Painting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/landscaping"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="200dp"
+        android:onClick="enterConcrete"
+        android:text="Concrete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="281dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="monospace"
+        android:text="@string/welcometext"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
