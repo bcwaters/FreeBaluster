@@ -4,70 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#84976A"
+    android:onClick="enterAngledRun"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/landscaping2"
+        android:id="@+id/flatRun"
         android:layout_width="174dp"
         android:layout_height="54dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="120dp"
-        android:onClick="enterLandscaping"
-        android:text="Landscaping"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="220dp"
+        android:background="@color/secondary"
+        android:onClick="enterAngledRun"
+        android:text="Angled Run"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/landscaping4"
+        android:id="@+id/FlatRun"
         android:layout_width="174dp"
         android:layout_height="54dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="360dp"
-        android:onClick="enterPlumbing"
-        android:text="Plumbing"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="136dp"
+        android:background="@color/secondary"
+        android:onClick="enterFlatRun"
+        android:text="Flat Run"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/landscaping3"
-        android:layout_width="174dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="280dp"
-        android:onClick="enterCarpentry"
-        android:text="Carpentry"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/landscaping6"
-        android:layout_width="174dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="444dp"
-        android:onClick="enterPainting"
-        android:text="Painting"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/landscaping"
-        android:layout_width="174dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="200dp"
-        android:onClick="enterConcrete"
-        android:text="Concrete"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="89dp"
+        android:background="@color/divider"
+        android:paddingLeft="5dp"
+        android:paddingTop="2dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="2dp"
+        android:scaleType="fitXY"
+        android:src="@android:drawable/divider_horizontal_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/Title"
-        android:layout_width="281dp"
-        android:layout_height="39dp"
+        android:layout_width="316dp"
+        android:layout_height="37dp"
         android:layout_marginTop="28dp"
         android:fontFamily="monospace"
-        android:text="@string/welcometext"
+        android:text="Spacing Calculator"
         android:textAlignment="center"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -76,5 +61,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

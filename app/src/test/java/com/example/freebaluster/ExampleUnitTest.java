@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.freebaluster;
 
 import org.junit.Test;
 

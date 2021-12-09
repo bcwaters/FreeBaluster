@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Baluster">
+    android:background="@color/main"
+    tools:context=".FlatRunBaluster">
 
     <TextView
         android:id="@+id/BalusterWidthFraction"
@@ -105,6 +106,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="192dp"
         android:layout_marginTop="340dp"
+        android:background="@empty"
         android:onClick="decreaseBaluster"
         android:text="-"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,6 +123,20 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="436dp"
+        android:background="@color/divider"
+        android:paddingLeft="5dp"
+        android:paddingTop="2dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="2dp"
+        android:scaleType="fitXY"
+        android:src="@android:drawable/divider_horizontal_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-62dp" />
 
     <TextView
         android:id="@+id/RunLength"
@@ -149,28 +165,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="349dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="412dp"
-        android:fontFamily="monospace"
-        android:text="Calculated Spacing"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/IncreaseBaluster"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="320dp"
         android:layout_marginTop="340dp"
+        android:background="@empty"
         android:onClick="increaseBaluster"
         android:text="+"
         app:layout_constraintStart_toStartOf="parent"
@@ -186,6 +187,7 @@
         android:text="1"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -209,23 +211,29 @@
 
     <TextView
         android:id="@+id/SpaceBetween"
-        android:layout_width="108dp"
+        android:layout_width="140dp"
         android:layout_height="34dp"
         android:layout_marginStart="272dp"
         android:layout_marginTop="484dp"
+        android:fontFamily="monospace"
         android:text="2"
+        android:textColor="@color/resultText"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/SpaceOnCenter"
-        android:layout_width="108dp"
+        android:layout_width="140dp"
         android:layout_height="34dp"
         android:layout_marginStart="272dp"
         android:layout_marginTop="552dp"
+        android:fontFamily="monospace"
         android:text="2"
+        android:textColor="@color/resultText"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

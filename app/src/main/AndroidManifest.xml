@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication" >
+    package="com.example.freebaluster">
 
     <application
         android:allowBackup="true"
@@ -8,31 +8,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication" >
+        android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".Baluster"
+            android:name=".AngledRunBaluster"
             android:exported="false" />
         <activity
-            android:name=".ConcreteMenu"
-            android:exported="false" />
-        <activity
-            android:name=".PlumbingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CarpentryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PaintingMenu"
-            android:exported="false" />
-        <activity
-            android:name=".LandscapingMenu"
-            android:exported="false" />
-        <activity
-            android:name=".NextActivity"
+            android:name=".FlatRunBaluster"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

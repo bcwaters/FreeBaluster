@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.freebaluster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 //TODO clean up this class now that it is working
-public class Baluster extends AppCompatActivity {
+public class FlatRunBaluster extends AppCompatActivity {
 
     private static int runFraction = 1;
     private static int balusterFraction = 1;
@@ -149,7 +149,7 @@ public class Baluster extends AppCompatActivity {
 
     public void setRunLength(int length) {
         TextView runLength = (TextView) findViewById(R.id.RunLength);
-        Baluster.runLength = length;
+        FlatRunBaluster.runLength = length;
         runLength.setText("" + length);
         updateResults();
     }
@@ -158,21 +158,21 @@ public class Baluster extends AppCompatActivity {
     public void setRunLengthFraction(int length) {
         TextView runLength = (TextView) findViewById(R.id.runLengthFraction);
         String fractionValue = getFractionString(length);
-        Baluster.runFraction = length;
+        FlatRunBaluster.runFraction = length;
         runLength.setText(fractionValue + "\" ");
         updateResults();
     }
 
     public void setBalusterWidth(int width) {
         TextView runLength = (TextView) findViewById(R.id.BalusterWidth);
-        Baluster.balusterWidth = width;
+        FlatRunBaluster.balusterWidth = width;
         runLength.setText("" + width);
         updateResults();
     }
 
     public void setBalusterWidthFraction(int width) {
         TextView runLength = (TextView) findViewById(R.id.BalusterWidthFraction);
-        Baluster.balusterFraction = width;
+        FlatRunBaluster.balusterFraction = width;
         String fractionValue = getFractionString(width);
         runLength.setText(fractionValue + "\" ");
         updateResults();
@@ -183,7 +183,7 @@ public class Baluster extends AppCompatActivity {
         TextView currentBalusters = (TextView) findViewById(R.id.TotalBalusters);
         int total = 1 + Integer.parseInt(currentBalusters.getText().toString());
 
-        if (total * (Baluster.balusterWidth + (Baluster.balusterFraction/16.0 )) < Baluster.runLength) {
+        if (total * (FlatRunBaluster.balusterWidth + (FlatRunBaluster.balusterFraction/16.0 )) < FlatRunBaluster.runLength) {
             currentBalusters.setText("" + total);
             updateResults();
         }
@@ -212,8 +212,8 @@ public class Baluster extends AppCompatActivity {
 
         TextView betweenSpacing = (TextView) findViewById(R.id.SpaceBetween);
 
-        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * Baluster.balusterFraction / 16));
-        double integerResult = (runLength + (((double) Baluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
+        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * FlatRunBaluster.balusterFraction / 16));
+        double integerResult = (runLength + (((double) FlatRunBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
         String fraction = getFractionResult(integerResult - Math.floor(integerResult));
         betweenSpacing.setText((int) Math.floor(integerResult) + " " + fraction + "\"");
     }
@@ -296,9 +296,9 @@ public class Baluster extends AppCompatActivity {
         TextView balusterWidthInteger = (TextView) findViewById(R.id.BalusterWidth);
         int balusterWidth = Integer.parseInt(balusterWidthInteger.getText().toString());
 
-        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * Baluster.balusterFraction / 16));
-        double integerResult = (runLength + (((double) Baluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
-        integerResult += ((balusterWidth * 1.0) + (1.0 * Baluster.balusterFraction / 16));
+        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * FlatRunBaluster.balusterFraction / 16));
+        double integerResult = (runLength + (((double) FlatRunBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
+        integerResult += ((balusterWidth * 1.0) + (1.0 * FlatRunBaluster.balusterFraction / 16));
         String fraction = getFractionResult(integerResult - Math.floor(integerResult));
 
         TextView onCenter = (TextView) findViewById(R.id.SpaceOnCenter);
