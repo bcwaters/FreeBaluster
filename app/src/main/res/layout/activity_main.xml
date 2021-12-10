@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#84976A"
     android:onClick="enterAngledRun"
-    tools:context=".MainActivity">
+    tools:context="com.devwaters.freebaluster.MainActivity">
 
     <Button
         android:id="@+id/FlatRun"

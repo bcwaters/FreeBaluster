@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main"
-    tools:context=".AngledTaperedBaluster">
+    tools:context="com.devwaters.freebaluster.AngledTaperedBaluster">
 
     <ImageView
         android:id="@+id/imageView"

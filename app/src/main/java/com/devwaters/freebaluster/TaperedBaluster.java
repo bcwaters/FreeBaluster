@@ -1,4 +1,4 @@
-package com.example.freebaluster;
+package com.devwaters.freebaluster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,25 +7,30 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class AttachedBaluster extends AppCompatActivity {
+import com.example.freebaluster.R;
 
+public class TaperedBaluster extends AppCompatActivity {
 
     private static int runFraction = 1;
     private static int balusterFraction = 1;
+    private static int balusterBottomFraction = 1;
+
 
     private static int runLength = 5;
     private static int balusterWidth = 1;
-
-    private static int balusterCount = 3;
+    private static int balusterBottomWidth = 1;
+    private static int balusterCount = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_attached_baluster);
+        setContentView(R.layout.activity_tapered_baluster);
         createRunSeekbar();
         createFractionSeekbar();
         createBalusterFractionSeekbar();
         createBalusterWidthSeekbar();
+        createBalusterBottomFractionSeekbar();
+        createBalusterBottomWidthSeekbar();
 
     }
 
@@ -88,6 +93,36 @@ public class AttachedBaluster extends AppCompatActivity {
     }
 
 
+    private void createBalusterBottomWidthSeekbar() {
+        int step = 1;
+        int max = 8;
+        int min = 1;
+
+        SeekBar seekbar = findViewById(R.id.balusterLengthInteger2);
+        seekbar.setMax((max - min) / step);
+
+        seekbar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                        double value = min + (progress * step) - 1;
+                        setBottomBalusterWidth((int) value);
+
+                    }
+                }
+        );
+    }
+
+
     private void createFractionSeekbar() {
         int step = 1;
         int max = 16;
@@ -117,6 +152,37 @@ public class AttachedBaluster extends AppCompatActivity {
         );
     }
 
+    private void createBalusterBottomFractionSeekbar() {
+        int step = 1;
+        int max = 16;
+        int min = 1;
+
+        SeekBar seekbar = findViewById(R.id.balusterLengthFraction2);
+        seekbar.setMax((max - min) / step);
+
+        seekbar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                        double value = min + (progress * step) - 1;
+                        setBalusterBottomWidthFraction((int) value);
+                        updateResults();
+
+                    }
+                }
+        );
+    }
+
+
     private void createBalusterFractionSeekbar() {
         int step = 1;
         int max = 16;
@@ -137,19 +203,18 @@ public class AttachedBaluster extends AppCompatActivity {
 
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
                         double value = min + (progress * step) - 1;
                         setBalusterWidthFraction((int) value);
                         updateResults();
-
                     }
                 }
         );
     }
 
+
     public void setRunLength(int length) {
         TextView runLength = (TextView) findViewById(R.id.RunLength);
-        AttachedBaluster.runLength = length;
+        TaperedBaluster.runLength = length;
         runLength.setText("" + length);
         updateResults();
     }
@@ -158,34 +223,48 @@ public class AttachedBaluster extends AppCompatActivity {
     public void setRunLengthFraction(int length) {
         TextView runLength = (TextView) findViewById(R.id.runLengthFraction);
         String fractionValue = getFractionString(length);
-        AttachedBaluster.runFraction = length;
+        TaperedBaluster.runFraction = length;
         runLength.setText(fractionValue + "\" ");
         updateResults();
     }
 
     public void setBalusterWidth(int width) {
         TextView bWidth = (TextView) findViewById(R.id.BalusterWidth);
-        AttachedBaluster.balusterWidth = width;
+        TaperedBaluster.balusterWidth = width;
+        bWidth.setText("" + width);
+        updateResults();
+    }
+
+    public void setBottomBalusterWidth(int width) {
+        TextView bWidth = (TextView) findViewById(R.id.balusterWidth2);
+        TaperedBaluster.balusterBottomWidth = width;
         bWidth.setText("" + width);
         updateResults();
     }
 
     public void setBalusterWidthFraction(int width) {
         TextView bWidth = (TextView) findViewById(R.id.BalusterWidthFraction);
-        AttachedBaluster.balusterFraction = width;
+        TaperedBaluster.balusterFraction = width;
         String fractionValue = getFractionString(width);
         bWidth.setText(fractionValue + "\" ");
         updateResults();
     }
 
+    public void setBalusterBottomWidthFraction(int width) {
+        TextView bWidth = (TextView) findViewById(R.id.balusterWidthFraction2);
+        TaperedBaluster.balusterBottomFraction = width;
+        String fractionValue = getFractionString(width);
+        bWidth.setText(fractionValue + "\" ");
+        updateResults();
+    }
 
     public void increaseBaluster(View view) {
         TextView currentBalusters = (TextView) findViewById(R.id.TotalBalusters);
         int total = 1 + Integer.parseInt(currentBalusters.getText().toString());
 
-        if ((total) * (AttachedBaluster.balusterWidth + (AttachedBaluster.balusterFraction/16.0 )) < AttachedBaluster.runLength) {
+        if (total * (TaperedBaluster.balusterWidth + (TaperedBaluster.balusterFraction / 16.0)) < TaperedBaluster.runLength) {
             currentBalusters.setText("" + total);
-            AttachedBaluster.balusterCount = total;
+            TaperedBaluster.balusterCount = total;
             updateResults();
         }
     }
@@ -193,8 +272,8 @@ public class AttachedBaluster extends AppCompatActivity {
     public void decreaseBaluster(View view) {
         TextView currentBalusters = (TextView) findViewById(R.id.TotalBalusters);
         int total = Integer.parseInt(currentBalusters.getText().toString()) - 1;
-        total = total < 3 ? 3 : total;
-        AttachedBaluster.balusterCount = total;
+        total = total < 1 ? 1 : total;
+        TaperedBaluster.balusterCount = total;
         currentBalusters.setText("" + total);
         updateResults();
     }
@@ -214,10 +293,22 @@ public class AttachedBaluster extends AppCompatActivity {
 
         TextView betweenSpacing = (TextView) findViewById(R.id.SpaceBetween);
 
-        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * AttachedBaluster.balusterFraction / 16));
-        double emptySpaceLength = (runLength  + (((double) AttachedBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters -1);
-        String fraction = getFractionResult(emptySpaceLength - Math.floor(emptySpaceLength));
-        betweenSpacing.setText((int) Math.floor(emptySpaceLength) + " " + fraction + "\"");
+        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * TaperedBaluster.balusterFraction / 16));
+        double integerResult = (runLength + (((double) TaperedBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
+        String fraction = getFractionResult(integerResult - Math.floor(integerResult));
+        betweenSpacing.setText((int) Math.floor(integerResult) + " " + fraction + "\"");
+
+
+        TextView balusterBottomWidthInteger = (TextView) findViewById(R.id.balusterWidth2);
+        int balusterBottomWidth = Integer.parseInt(balusterBottomWidthInteger.getText().toString());
+
+        double balusterBottomSpace = totalBalusters * ((balusterBottomWidth * 1.0) + (1.0 * TaperedBaluster.balusterBottomFraction / 16));
+        double integerBottomResult = (runLength + (((double) TaperedBaluster.runFraction) / 16) - balusterBottomSpace) / (totalBalusters + 1);
+        String fractionBottom = getFractionResult(integerBottomResult - Math.floor(integerBottomResult));
+
+        TextView onBottomCenter = (TextView) findViewById(R.id.spaceBetween);
+        onBottomCenter.setText((int) Math.floor(integerBottomResult) + " " + fractionBottom + "\"");
+
     }
 
     private String getFractionString(int numerator) {
@@ -298,13 +389,26 @@ public class AttachedBaluster extends AppCompatActivity {
         TextView balusterWidthInteger = (TextView) findViewById(R.id.BalusterWidth);
         int balusterWidth = Integer.parseInt(balusterWidthInteger.getText().toString());
 
-        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * AttachedBaluster.balusterFraction / 16));
-        double integerResult = (runLength + (((double) AttachedBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters -1);
-        integerResult += ((balusterWidth * 1.0) + (1.0 * AttachedBaluster.balusterFraction / 16));
+        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * TaperedBaluster.balusterFraction / 16));
+        double integerResult = (runLength + (((double) TaperedBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
+        integerResult += ((balusterWidth * 1.0) + (1.0 * TaperedBaluster.balusterFraction / 16));
         String fraction = getFractionResult(integerResult - Math.floor(integerResult));
 
         TextView onCenter = (TextView) findViewById(R.id.SpaceOnCenter);
         onCenter.setText((int) Math.floor(integerResult) + " " + fraction + "\"");
+
+        TextView balusterBottomWidthInteger = (TextView) findViewById(R.id.balusterWidth2);
+        int balusterBottomWidth = Integer.parseInt(balusterBottomWidthInteger.getText().toString());
+
+        double balusterBottomSpace = totalBalusters * ((balusterBottomWidth * 1.0) + (1.0 * TaperedBaluster.balusterBottomFraction / 16));
+        double integerBottomResult = (runLength + (((double) TaperedBaluster.runFraction) / 16) - balusterBottomSpace) / (totalBalusters + 1);
+        integerBottomResult += ((balusterBottomWidth * 1.0) + (1.0 * TaperedBaluster.balusterBottomFraction / 16));
+        String fractionBottom = getFractionResult(integerBottomResult - Math.floor(integerBottomResult));
+
+        TextView onBottomCenter = (TextView) findViewById(R.id.spaceOnCenter);
+        onBottomCenter.setText((int) Math.floor(integerBottomResult) + " " + fractionBottom + "\"");
+
+
 
     }
 

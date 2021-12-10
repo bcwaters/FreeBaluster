@@ -10,31 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".AngledTaperedBaluster"
+            android:name="com.devwaters.freebaluster.AngledTaperedBaluster"
             android:label="Angled Tapered"
             android:exported="false" />
         <activity
-            android:name=".TaperedBaluster"
+            android:name="com.devwaters.freebaluster.TaperedBaluster"
             android:label="Tapered Baluster"
             android:exported="false" />
         <activity
-            android:name=".AngledAttachedBaluster"
+            android:name="com.devwaters.freebaluster.AngledAttachedBaluster"
             android:label="Angled Attached"
             android:exported="false" />
         <activity
-            android:name=".AttachedBaluster"
+            android:name="com.devwaters.freebaluster.AttachedBaluster"
             android:label="Attached Baluster"
             android:exported="false" />
         <activity
-            android:name=".AngledRunBaluster"
+            android:name="com.devwaters.freebaluster.AngledRunBaluster"
             android:label="Angled Run"
             android:exported="false" />
         <activity
-            android:name=".FlatRunBaluster"
+            android:name="com.devwaters.freebaluster.FlatRunBaluster"
             android:label="Flat Run"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.devwaters.freebaluster.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

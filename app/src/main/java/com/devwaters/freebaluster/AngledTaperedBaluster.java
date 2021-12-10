@@ -1,4 +1,4 @@
-package com.example.freebaluster;
+package com.devwaters.freebaluster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,14 +7,17 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class AngledRunBaluster extends AppCompatActivity {
+import com.example.freebaluster.R;
 
+public class AngledTaperedBaluster extends AppCompatActivity {
 
     private static int runFraction = 1;
     private static int balusterFraction = 1;
+    private static int balusterBottomFraction = 1;
 
     private static int runLength = 5;
     private static int balusterWidth = 1;
+    private static int balusterBottomWidth = 1;
 
     private static int balusterCount = 1;
     private static int runAngle = 0;
@@ -22,12 +25,15 @@ public class AngledRunBaluster extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_angled_run_baluster);
+        setContentView(R.layout.activity_angled_tapered_baluster);
         createRunSeekbar();
         createFractionSeekbar();
         createBalusterFractionSeekbar();
         createBalusterWidthSeekbar();
         createAngleSeekbar();
+
+        createBalusterBottomFractionSeekbar();
+        createBalusterBottomWidthSeekbar();
 
     }
 
@@ -90,6 +96,85 @@ public class AngledRunBaluster extends AppCompatActivity {
     }
 
 
+
+    public void setBottomBalusterWidth(int width) {
+        TextView bWidth = (TextView) findViewById(R.id.balusterWidth3);
+       // AngledAttachedBaluster.balusterWidth = width;
+        bWidth.setText("" + width);
+        updateResults();
+    }
+
+    public void setBalusterBottomWidthFraction(int width) {
+        TextView bWidth = (TextView) findViewById(R.id.balusterWidthFraction3);
+       AngledTaperedBaluster.balusterBottomFraction = width;
+        String fractionValue = getFractionString(width);
+        bWidth.setText(fractionValue + "\" ");
+        updateResults();
+    }
+
+
+    private void createBalusterBottomFractionSeekbar() {
+        int step = 1;
+        int max = 16;
+        int min = 1;
+
+        SeekBar seekbar = findViewById(R.id.balusterLengthFraction3);
+        seekbar.setMax((max - min) / step);
+
+        seekbar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                        double value = min + (progress * step) - 1;
+                        setBalusterBottomWidthFraction((int) value);
+                        updateResults();
+
+                    }
+                }
+        );
+    }
+
+
+    private void createBalusterBottomWidthSeekbar() {
+        int step = 1;
+        int max = 8;
+        int min = 1;
+
+        SeekBar seekbar = findViewById(R.id.balusterLengthInteger3);
+        seekbar.setMax((max - min) / step);
+
+        seekbar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                        double value = min + (progress * step) - 1;
+                        setBottomBalusterWidth((int) value);
+
+                    }
+                }
+        );
+    }
+
+
+
     private void createFractionSeekbar() {
         int step = 1;
         int max = 16;
@@ -150,7 +235,7 @@ public class AngledRunBaluster extends AppCompatActivity {
     }
 
     private void setAngle(int angleValue) {
-        AngledRunBaluster.runAngle = angleValue;
+        AngledTaperedBaluster.runAngle = angleValue;
         TextView angleView = findViewById(R.id.angleValue);
         angleView.setText(angleValue + "");
         updateResults();
@@ -190,7 +275,7 @@ public class AngledRunBaluster extends AppCompatActivity {
 
     public void setRunLength(int length) {
         TextView runLength = (TextView) findViewById(R.id.RunLength);
-        AngledRunBaluster.runLength = length;
+        AngledTaperedBaluster.runLength = length;
         runLength.setText("" + length);
         updateResults();
     }
@@ -199,21 +284,21 @@ public class AngledRunBaluster extends AppCompatActivity {
     public void setRunLengthFraction(int length) {
         TextView runLength = (TextView) findViewById(R.id.runLengthFraction);
         String fractionValue = getFractionString(length);
-        AngledRunBaluster.runFraction = length;
+        AngledTaperedBaluster.runFraction = length;
         runLength.setText(fractionValue + "\" ");
         updateResults();
     }
 
     public void setBalusterWidth(int width) {
         TextView runLength = (TextView) findViewById(R.id.BalusterWidth);
-        AngledRunBaluster.balusterWidth = width;
+        AngledTaperedBaluster.balusterWidth = width;
         runLength.setText("" + width);
         updateResults();
     }
 
     public void setBalusterWidthFraction(int width) {
         TextView runLength = (TextView) findViewById(R.id.BalusterWidthFraction);
-        AngledRunBaluster.balusterFraction = width;
+        AngledTaperedBaluster.balusterFraction = width;
         String fractionValue = getFractionString(width);
         runLength.setText(fractionValue + "\" ");
         updateResults();
@@ -224,7 +309,7 @@ public class AngledRunBaluster extends AppCompatActivity {
         TextView currentBalusters = (TextView) findViewById(R.id.TotalBalusters);
         int total = 1 + Integer.parseInt(currentBalusters.getText().toString());
 
-        if (total * (AngledRunBaluster.balusterWidth + (AngledRunBaluster.balusterFraction / 16.0)) < (AngledRunBaluster.runLength * Math.cos(Math.toRadians(AngledRunBaluster.runAngle)))) {
+        if (total * (AngledTaperedBaluster.balusterWidth + (AngledTaperedBaluster.balusterFraction / 16.0)) < (AngledTaperedBaluster.runLength * Math.cos(Math.toRadians(AngledTaperedBaluster.runAngle)))) {
             currentBalusters.setText("" + total);
             updateResults();
         }
@@ -248,15 +333,28 @@ public class AngledRunBaluster extends AppCompatActivity {
         int totalBalusters = Integer.parseInt(currentBalusters.getText().toString());
         TextView runLengthInteger = (TextView) findViewById(R.id.RunLength);
         double runLength = Integer.parseInt(runLengthInteger.getText().toString());
+        runLength = runLength * Math.cos(Math.toRadians(AngledTaperedBaluster.runAngle));
         TextView balusterWidthInteger = (TextView) findViewById(R.id.BalusterWidth);
         double balusterWidth = Integer.parseInt(balusterWidthInteger.getText().toString());
-        runLength = runLength * Math.cos(Math.toRadians(AngledRunBaluster.runAngle));
+
         TextView betweenSpacing = (TextView) findViewById(R.id.SpaceBetween);
 
-        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * AngledRunBaluster.balusterFraction / 16));
-        double integerResult = (runLength + (((double) AngledRunBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
+        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * AngledTaperedBaluster.balusterFraction / 16));
+        double integerResult = (runLength + (((double) AngledTaperedBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
         String fraction = getFractionResult(integerResult - Math.floor(integerResult));
         betweenSpacing.setText((int) Math.floor(integerResult) + " " + fraction + "\"");
+
+
+        TextView balusterBottomWidthInteger = (TextView) findViewById(R.id.balusterWidth3);
+        int balusterBottomWidth = Integer.parseInt(balusterBottomWidthInteger.getText().toString());
+
+        double balusterBottomSpace = totalBalusters * ((balusterBottomWidth * 1.0) + (1.0 * AngledTaperedBaluster.balusterBottomFraction / 16));
+        double integerBottomResult = (runLength + (((double) AngledTaperedBaluster.runFraction) / 16) - balusterBottomSpace) / (totalBalusters + 1);
+        String fractionBottom = getFractionResult(integerBottomResult - Math.floor(integerBottomResult));
+
+        TextView onBottomCenter = (TextView) findViewById(R.id.spaceBetween2);
+        onBottomCenter.setText((int) Math.floor(integerBottomResult) + " " + fractionBottom + "\"");
+
     }
 
     private String getFractionString(int numerator) {
@@ -334,17 +432,30 @@ public class AngledRunBaluster extends AppCompatActivity {
         int totalBalusters = Integer.parseInt(currentBalusters.getText().toString());
         TextView runLengthInteger = (TextView) findViewById(R.id.RunLength);
         double runLength = Integer.parseInt(runLengthInteger.getText().toString());
+        runLength = runLength * Math.cos(Math.toRadians(AngledTaperedBaluster.runAngle));
         TextView balusterWidthInteger = (TextView) findViewById(R.id.BalusterWidth);
         int balusterWidth = Integer.parseInt(balusterWidthInteger.getText().toString());
-        runLength = runLength * Math.cos(Math.toRadians( AngledRunBaluster.runAngle));
-        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * AngledRunBaluster.balusterFraction / 16));
-        double integerResult = (runLength + (((double) AngledRunBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
-        integerResult += ((balusterWidth * 1.0) + (1.0 * AngledRunBaluster.balusterFraction / 16));
+
+        double balusterSpace = totalBalusters * ((balusterWidth * 1.0) + (1.0 * AngledTaperedBaluster.balusterFraction / 16));
+        double integerResult = (runLength + (((double) AngledTaperedBaluster.runFraction) / 16) - balusterSpace) / (totalBalusters + 1);
+        integerResult += ((balusterWidth * 1.0) + (1.0 * AngledTaperedBaluster.balusterFraction / 16));
         String fraction = getFractionResult(integerResult - Math.floor(integerResult));
 
         TextView onCenter = (TextView) findViewById(R.id.SpaceOnCenter);
         onCenter.setText((int) Math.floor(integerResult) + " " + fraction + "\"");
 
-    }
+        TextView balusterBottomWidthInteger = (TextView) findViewById(R.id.balusterWidth3);
+        int balusterBottomWidth = Integer.parseInt(balusterBottomWidthInteger.getText().toString());
 
+        double balusterBottomSpace = totalBalusters * ((balusterBottomWidth * 1.0) + (1.0 * AngledTaperedBaluster.balusterBottomFraction / 16));
+        double integerBottomResult = (runLength + (((double) AngledTaperedBaluster.runFraction) / 16) - balusterBottomSpace) / (totalBalusters + 1);
+        integerBottomResult += ((balusterBottomWidth * 1.0) + (1.0 * AngledTaperedBaluster.balusterBottomFraction / 16));
+        String fractionBottom = getFractionResult(integerBottomResult - Math.floor(integerBottomResult));
+
+        TextView onBottomCenter = (TextView) findViewById(R.id.spaceOnCenter2);
+        onBottomCenter.setText((int) Math.floor(integerBottomResult) + " " + fractionBottom + "\"");
+
+
+
+    }
 }
