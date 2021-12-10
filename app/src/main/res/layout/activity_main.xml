@@ -9,14 +9,14 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/flatRun4"
+        android:id="@+id/FlatRun"
         android:layout_width="174dp"
         android:layout_height="54dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="384dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="112dp"
         android:background="@color/secondary"
-        android:onClick="enterAngledAttachedBaluster"
-        android:text="Angled Attached"
+        android:onClick="enterFlatRun"
+        android:text="Flat Run"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,8 +24,8 @@
         android:id="@+id/flatRun3"
         android:layout_width="174dp"
         android:layout_height="54dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="464dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="440dp"
         android:background="@color/secondary"
         android:onClick="enterTaperedBaluster"
         android:text="Tapered Baluster"
@@ -36,8 +36,8 @@
         android:id="@+id/flatRun5"
         android:layout_width="174dp"
         android:layout_height="54dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="520dp"
         android:background="@color/secondary"
         android:onClick="enterAngledTaperedBaluster"
         android:text="Angled Tapered"
@@ -45,11 +45,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/flatRun4"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="360dp"
+        android:background="@color/secondary"
+        android:onClick="enterAngledAttachedBaluster"
+        android:text="Angled Attached"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/flatRun"
         android:layout_width="174dp"
         android:layout_height="54dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="196dp"
         android:background="@color/secondary"
         android:onClick="enterAngledRun"
         android:text="Angled Run"
@@ -60,23 +72,11 @@
         android:id="@+id/flatRun2"
         android:layout_width="174dp"
         android:layout_height="54dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="276dp"
         android:background="@color/secondary"
         android:onClick="enterAttachedBaluster"
         android:text="Attached Baluster"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/FlatRun"
-        android:layout_width="174dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="136dp"
-        android:background="@color/secondary"
-        android:onClick="enterFlatRun"
-        android:text="Flat Run"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
