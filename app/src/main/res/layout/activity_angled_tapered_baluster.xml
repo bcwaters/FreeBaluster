@@ -7,43 +7,146 @@
     android:background="@color/main"
     tools:context=".AngledTaperedBaluster">
 
-    <SeekBar
-        android:id="@+id/RunLengthFraction"
-        android:layout_width="342dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="120dp"
+    <TextView
+        android:id="@+id/spaceBetweenResult"
+        android:layout_width="207dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="496dp"
+        android:fontFamily="monospace"
+        android:text="Bottom:"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/BalusterWidthFraction"
-        android:layout_width="100dp"
+        android:id="@+id/SpaceOnCenter"
+        android:layout_width="140dp"
         android:layout_height="26dp"
         android:layout_marginStart="264dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="532dp"
         android:fontFamily="monospace"
-        android:text='"'
+        android:text="2"
+        android:textColor="@color/resultText"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <SeekBar
-        android:id="@+id/BalusterLengthInteger"
-        android:layout_width="165dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="216dp"
+    <TextView
+        android:id="@+id/SpaceBetween"
+        android:layout_width="140dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="264dp"
+        android:layout_marginTop="464dp"
+        android:fontFamily="monospace"
+        android:text="2"
+        android:textColor="@color/resultText"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/balusterWidth"
+        android:id="@+id/SpaceBetweenResult"
+        android:layout_width="222dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="464dp"
+        android:fontFamily="monospace"
+        android:text="Space Between Top:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/spaceBetween2"
+        android:layout_width="140dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="264dp"
+        android:layout_marginTop="496dp"
+        android:fontFamily="monospace"
+        android:text="2"
+        android:textColor="@color/resultText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/spaceOnCenterResult"
+        android:layout_width="222dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="568dp"
+        android:fontFamily="monospace"
+        android:text="Bottom:"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/spaceOnCenter2"
+        android:layout_width="140dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="264dp"
+        android:layout_marginTop="568dp"
+        android:fontFamily="monospace"
+        android:text="2"
+        android:textColor="@color/resultText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="444dp"
+        android:background="@color/divider"
+        android:paddingLeft="5dp"
+        android:paddingTop="2dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="2dp"
+        android:scaleType="fitXY"
+        android:src="@android:drawable/divider_horizontal_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="9dp" />
+
+    <TextView
+        android:id="@+id/SpaceOnCenterResult"
+        android:layout_width="222dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="532dp"
+        android:fontFamily="monospace"
+        android:text="On Center Top:"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="224dp"
+        android:fontFamily="monospace"
+        android:text="Bottom  Width:"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/balusterWidth3"
         android:layout_width="25dp"
         android:layout_height="26dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="228dp"
         android:fontFamily="monospace"
         android:text="1"
         android:textAlignment="textEnd"
@@ -52,12 +155,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <SeekBar
+        android:id="@+id/balusterLengthFraction3"
+        android:layout_width="165dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="260dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/balusterWidthFraction"
+        android:id="@+id/balusterWidthFraction3"
         android:layout_width="100dp"
         android:layout_height="26dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="228dp"
         android:fontFamily="monospace"
         android:text='"'
         android:textSize="20sp"
@@ -65,42 +177,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="256dp"
-        android:fontFamily="monospace"
-        android:text="Bottom Width:"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <SeekBar
-        android:id="@+id/BalusterLengthFraction"
+        android:id="@+id/balusterLengthInteger3"
         android:layout_width="165dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginTop="216dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SeekBar
-        android:id="@+id/balusterLengthInteger"
-        android:layout_width="165dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="292dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SeekBar
-        android:id="@+id/balusterLengthFraction"
-        android:layout_width="165dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginTop="292dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="260dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,9 +191,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="160dp"
         android:fontFamily="monospace"
-        android:text="Top  Width:"
+        android:text="Top Width:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -120,13 +202,53 @@
         android:id="@+id/BalusterWidth"
         android:layout_width="25dp"
         android:layout_height="26dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="160dp"
         android:fontFamily="monospace"
         android:text="1"
         android:textAlignment="textEnd"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/BalusterLengthInteger"
+        android:layout_width="165dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="192dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/BalusterLengthFraction"
+        android:layout_width="165dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="192dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/BalusterWidthFraction"
+        android:layout_width="100dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="160dp"
+        android:fontFamily="monospace"
+        android:text='"'
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/RunLengthFraction"
+        android:layout_width="342dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -170,123 +292,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/SpaceOnCenter"
-        android:layout_width="140dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="576dp"
-        android:fontFamily="monospace"
-        android:text="2"
-        android:textColor="@color/resultText"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/SpaceBetweenResult"
-        android:layout_width="207dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="508dp"
-        android:fontFamily="monospace"
-        android:text="Space Between:"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SeekBar
-        android:id="@+id/angleSeekbar"
-        android:layout_width="342dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="428dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/SpaceOnCenterResult"
-        android:layout_width="222dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="576dp"
-        android:fontFamily="monospace"
-        android:text="Spacing on Center:"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/SpaceBetween"
-        android:layout_width="140dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="508dp"
-        android:fontFamily="monospace"
-        android:text="2"
-        android:textColor="@color/resultText"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="472dp"
-        android:background="@color/divider"
-        android:paddingLeft="5dp"
-        android:paddingTop="2dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="2dp"
-        android:scaleType="fitXY"
-        android:src="@android:drawable/divider_horizontal_dark"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <SeekBar
-        android:id="@+id/RunLengthInteger"
-        android:layout_width="342dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="72dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/angleValue2"
-        android:layout_width="48dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="384dp"
-        android:fontFamily="monospace"
-        android:text="°"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="384dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="304dp"
         android:fontFamily="monospace"
-        android:text="Angle:"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/angleValue"
-        android:layout_width="48dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="384dp"
-        android:fontFamily="monospace"
-        android:text="0"
-        android:textAlignment="textEnd"
+        android:text="Balusters: "
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -296,7 +308,7 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="316dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="296dp"
         android:background="@empty"
         android:onClick="increaseBaluster"
         android:text="+"
@@ -308,12 +320,59 @@
         android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="252dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="304dp"
         android:fontFamily="monospace"
-        android:text="1"
+        android:text="3"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="352dp"
+        android:fontFamily="monospace"
+        android:text="Angle:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/angleValue2"
+        android:layout_width="48dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="352dp"
+        android:fontFamily="monospace"
+        android:text="°"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/angleSeekbar"
+        android:layout_width="342dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="384dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/angleValue"
+        android:layout_width="48dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="352dp"
+        android:fontFamily="monospace"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -322,22 +381,19 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="296dp"
         android:background="@empty"
         android:onClick="decreaseBaluster"
         android:text="-"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <SeekBar
+        android:id="@+id/RunLengthInteger"
+        android:layout_width="342dp"
+        android:layout_height="36dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="340dp"
-        android:fontFamily="monospace"
-        android:text="Balusters: "
-        android:textSize="20sp"
+        android:layout_marginTop="72dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
