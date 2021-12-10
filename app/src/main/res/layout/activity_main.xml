@@ -9,6 +9,42 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/flatRun4"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="384dp"
+        android:background="@color/secondary"
+        android:onClick="enterAngledAttachedBaluster"
+        android:text="Angled Attached"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/flatRun3"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="464dp"
+        android:background="@color/secondary"
+        android:onClick="enterTaperedBaluster"
+        android:text="Tapered Baluster"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/flatRun5"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="544dp"
+        android:background="@color/secondary"
+        android:onClick="enterAngledTaperedBaluster"
+        android:text="Angled Tapered"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/flatRun"
         android:layout_width="174dp"
         android:layout_height="54dp"
@@ -17,6 +53,18 @@
         android:background="@color/secondary"
         android:onClick="enterAngledRun"
         android:text="Angled Run"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/flatRun2"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="300dp"
+        android:background="@color/secondary"
+        android:onClick="enterAttachedBaluster"
+        android:text="Attached Baluster"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

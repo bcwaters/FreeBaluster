@@ -60,7 +60,7 @@ public class FlatRunBaluster extends AppCompatActivity {
 
     private void createBalusterWidthSeekbar() {
         int step = 1;
-        int max = 6;
+        int max = 8;
         int min = 1;
 
         SeekBar seekbar = findViewById(R.id.BalusterLengthInteger);
@@ -164,17 +164,17 @@ public class FlatRunBaluster extends AppCompatActivity {
     }
 
     public void setBalusterWidth(int width) {
-        TextView runLength = (TextView) findViewById(R.id.BalusterWidth);
+        TextView bWidth = (TextView) findViewById(R.id.BalusterWidth);
         FlatRunBaluster.balusterWidth = width;
-        runLength.setText("" + width);
+        bWidth.setText("" + width);
         updateResults();
     }
 
     public void setBalusterWidthFraction(int width) {
-        TextView runLength = (TextView) findViewById(R.id.BalusterWidthFraction);
+        TextView bWidth = (TextView) findViewById(R.id.BalusterWidthFraction);
         FlatRunBaluster.balusterFraction = width;
         String fractionValue = getFractionString(width);
-        runLength.setText(fractionValue + "\" ");
+        bWidth.setText(fractionValue + "\" ");
         updateResults();
     }
 
@@ -185,6 +185,7 @@ public class FlatRunBaluster extends AppCompatActivity {
 
         if (total * (FlatRunBaluster.balusterWidth + (FlatRunBaluster.balusterFraction/16.0 )) < FlatRunBaluster.runLength) {
             currentBalusters.setText("" + total);
+            FlatRunBaluster.balusterCount = total;
             updateResults();
         }
     }
@@ -193,6 +194,7 @@ public class FlatRunBaluster extends AppCompatActivity {
         TextView currentBalusters = (TextView) findViewById(R.id.TotalBalusters);
         int total = Integer.parseInt(currentBalusters.getText().toString()) - 1;
         total = total < 1 ? 1 : total;
+        FlatRunBaluster.balusterCount = total;
         currentBalusters.setText("" + total);
         updateResults();
     }

@@ -16,16 +16,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void enterFlatRun(View view){
-        TextView textView = (TextView) findViewById(R.id.Title);
+    public void enterFlatRun(View view) {
         Intent intent = new Intent(this, FlatRunBaluster.class);
         startActivity(intent);
     }
 
-    public void enterAngledRun(View view){
-        TextView textView = (TextView) findViewById(R.id.Title);
+    public void enterAngledRun(View view) {
         Intent intent = new Intent(this, AngledRunBaluster.class);
         startActivity(intent);
     }
+
+    public void enterAttachedBaluster(View view) {
+        Intent intent = new Intent(this, AttachedBaluster.class);
+        startActivity(intent);
+    }
+
+    public void enterAngledAttachedBaluster(View view) {
+        Intent intent = new Intent(this, AngledAttachedBaluster.class);
+        startActivity(intent);
+    }
+
+    public void enterTaperedBaluster(View view) {
+        Intent intent = new Intent(this, TaperedBaluster.class);
+        startActivity(intent);
+    }
+    public void enterAngledTaperedBaluster(View view) {
+        Intent intent = new Intent(this, AngledTaperedBaluster.class);
+        startActivity(intent);
+    }
+
 
 }

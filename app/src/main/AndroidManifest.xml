@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".AngledTaperedBaluster"
+            android:exported="false" />
+        <activity
+            android:name=".TaperedBaluster"
+            android:exported="false" />
+        <activity
+            android:name=".AngledAttachedBaluster"
+            android:exported="false" />
+        <activity
+            android:name=".AttachedBaluster"
+            android:exported="false" />
+        <activity
             android:name=".AngledRunBaluster"
             android:exported="false" />
         <activity
