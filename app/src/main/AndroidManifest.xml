@@ -11,21 +11,27 @@
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name=".AngledTaperedBaluster"
+            android:label="Angled Tapered"
             android:exported="false" />
         <activity
             android:name=".TaperedBaluster"
+            android:label="Tapered Baluster"
             android:exported="false" />
         <activity
             android:name=".AngledAttachedBaluster"
+            android:label="Angled Attached"
             android:exported="false" />
         <activity
             android:name=".AttachedBaluster"
+            android:label="Attached Baluster"
             android:exported="false" />
         <activity
             android:name=".AngledRunBaluster"
+            android:label="Angled Run"
             android:exported="false" />
         <activity
             android:name=".FlatRunBaluster"
+            android:label="Flat Run"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
