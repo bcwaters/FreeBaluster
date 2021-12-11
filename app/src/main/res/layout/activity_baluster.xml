@@ -15,7 +15,7 @@
         android:layout_marginTop="204dp"
         android:fontFamily="monospace"
         android:text='"'
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +29,7 @@
         android:fontFamily="monospace"
         android:text="1"
         android:textAlignment="textEnd"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +42,7 @@
         android:layout_marginTop="48dp"
         android:fontFamily="monospace"
         android:text="Run Length:"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,7 +54,7 @@
         android:layout_marginTop="484dp"
         android:fontFamily="monospace"
         android:text="Space Between:"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,7 +75,7 @@
         android:layout_marginTop="552dp"
         android:fontFamily="monospace"
         android:text="Spacing on Center:"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,7 +87,7 @@
         android:layout_marginTop="204dp"
         android:fontFamily="monospace"
         android:text="Baluster Width:"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,7 +120,7 @@
         android:layout_marginTop="348dp"
         android:fontFamily="monospace"
         android:text="Balusters: "
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -147,7 +147,7 @@
         android:fontFamily="monospace"
         android:text="5"
         android:textAlignment="textEnd"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -160,7 +160,7 @@
         android:layout_marginTop="48dp"
         android:fontFamily="monospace"
         android:text='"'
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -186,7 +186,7 @@
         android:fontFamily="monospace"
         android:text="1"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -218,7 +218,7 @@
         android:fontFamily="monospace"
         android:text="2"
         android:textColor="@color/resultText"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -232,7 +232,7 @@
         android:fontFamily="monospace"
         android:text="2"
         android:textColor="@color/resultText"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

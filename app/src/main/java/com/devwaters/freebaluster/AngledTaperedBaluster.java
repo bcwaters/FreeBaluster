@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.example.freebaluster.R;
-
 public class AngledTaperedBaluster extends AppCompatActivity {
 
     private static int runFraction = 1;

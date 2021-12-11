@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="fill_parent"
-        android:layout_height="3dp"
+        android:layout_height="5dp"
         android:layout_marginTop="528dp"
         android:background="@color/divider"
         android:paddingLeft="5dp"
@@ -25,40 +25,80 @@
     <TextView
         android:id="@+id/spaceBetweenResult"
         android:layout_width="207dp"
-        android:layout_height="26dp"
+        android:layout_height="30dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="496dp"
         android:fontFamily="monospace"
         android:text="Bottom:"
         android:textAlignment="textEnd"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/SpaceOnCenter"
         android:layout_width="140dp"
-        android:layout_height="26dp"
+        android:layout_height="30dp"
         android:layout_marginStart="264dp"
-        android:layout_marginTop="532dp"
+        android:layout_marginTop="544dp"
         android:fontFamily="monospace"
         android:text="2"
         android:textColor="@color/resultText"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/spaceOnCenter2"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="264dp"
+        android:layout_marginTop="580dp"
+        android:fontFamily="monospace"
+        android:text="2"
+        android:textColor="@color/resultText"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/SpaceOnCenterResult"
+        android:layout_width="222dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="544dp"
+        android:fontFamily="monospace"
+        android:text="On Center Top:"
+        android:textAlignment="textEnd"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/spaceOnCenterResult"
+        android:layout_width="222dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="580dp"
+        android:fontFamily="monospace"
+        android:text="Bottom:"
+        android:textAlignment="textEnd"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/SpaceBetween"
         android:layout_width="140dp"
-        android:layout_height="26dp"
+        android:layout_height="30dp"
         android:layout_marginStart="264dp"
         android:layout_marginTop="464dp"
         android:fontFamily="monospace"
         android:text="2"
         android:textColor="@color/resultText"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -66,52 +106,26 @@
     <TextView
         android:id="@+id/SpaceBetweenResult"
         android:layout_width="222dp"
-        android:layout_height="25dp"
+        android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="464dp"
         android:fontFamily="monospace"
         android:text="Space Between Top:"
-        android:textSize="20sp"
+        android:textAlignment="textEnd"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/spaceBetween2"
         android:layout_width="140dp"
-        android:layout_height="26dp"
+        android:layout_height="30dp"
         android:layout_marginStart="264dp"
         android:layout_marginTop="496dp"
         android:fontFamily="monospace"
         android:text="2"
         android:textColor="@color/resultText"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/spaceOnCenterResult"
-        android:layout_width="222dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="568dp"
-        android:fontFamily="monospace"
-        android:text="Bottom:"
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/spaceOnCenter2"
-        android:layout_width="140dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="568dp"
-        android:fontFamily="monospace"
-        android:text="2"
-        android:textColor="@color/resultText"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -131,19 +145,6 @@
         tools:layout_editor_absoluteX="9dp" />
 
     <TextView
-        android:id="@+id/SpaceOnCenterResult"
-        android:layout_width="222dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="532dp"
-        android:fontFamily="monospace"
-        android:text="On Center Top:"
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -152,7 +153,7 @@
         android:fontFamily="monospace"
         android:text="Bottom  Width:"
         android:textAlignment="textEnd"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -165,7 +166,7 @@
         android:fontFamily="monospace"
         android:text="1"
         android:textAlignment="textEnd"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -187,7 +188,7 @@
         android:layout_marginTop="228dp"
         android:fontFamily="monospace"
         android:text='"'
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -209,7 +210,7 @@
         android:layout_marginTop="160dp"
         android:fontFamily="monospace"
         android:text="Top Width:"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -222,7 +223,7 @@
         android:fontFamily="monospace"
         android:text="1"
         android:textAlignment="textEnd"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -253,7 +254,7 @@
         android:layout_marginTop="160dp"
         android:fontFamily="monospace"
         android:text='"'
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -276,7 +277,7 @@
         android:fontFamily="monospace"
         android:text="5"
         android:textAlignment="textEnd"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -289,7 +290,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="monospace"
         android:text='"'
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -302,7 +303,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="monospace"
         android:text="Run Length:"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -314,7 +315,7 @@
         android:layout_marginTop="304dp"
         android:fontFamily="monospace"
         android:text="Balusters: "
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -339,7 +340,7 @@
         android:fontFamily="monospace"
         android:text="3"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -352,7 +353,7 @@
         android:layout_marginTop="352dp"
         android:fontFamily="monospace"
         android:text="Angle:"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -365,7 +366,7 @@
         android:fontFamily="monospace"
         android:text="°"
         android:textAlignment="viewStart"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -387,7 +388,7 @@
         android:fontFamily="monospace"
         android:text="0"
         android:textAlignment="textEnd"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
